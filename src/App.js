@@ -4,7 +4,7 @@ import MyClock from "./components/clock";
 function App() {
   return (
     <div className="App">
-      <MyClock />
+      <MyClock></MyClock>
     </div>
   );
 }

@@ -1,12 +1,6 @@
 
 import React, { useState, useEffect } from "react"
-
-function NumberList(props) {
-  const listItem = props.numbers.map((num) => {
-    return <li key={num}>{num}</li>
-  })
-  return <ul>{listItem}</ul>
-}
+import NumberList from "./NumberList"; 
 
 export default class MyClock extends React.Component {
   constructor(props) {
@@ -43,9 +37,9 @@ export default class MyClock extends React.Component {
       <div>
         <div>我的时钟</div>
         <div>{this.state.date.toLocaleTimeString()}</div>
-        <NumberList numbers={numbers}></NumberList>
         <input value={this.state.inputVal} onChange={this.inputChangeHandler} />
         <ExampleHook></ExampleHook>
+        <NumberList numbers={numbers}></NumberList>
       </div>
     )
   }
