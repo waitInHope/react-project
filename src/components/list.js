@@ -14,7 +14,7 @@ function ListItem({ item }) {
 }
 
 export default function List({items}) {
-  const postArr = useSelector((state) => state.posts.posts);
+  const postArr = useSelector((state) => state.posts.data);
   console.log('从redux获取到的全局状态', postArr);
 
   const dispatch = useDispatch();

@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { client } from '../api/client'
 
 const initialState = {
-    posts: [
+    data: [
         {id: 1, title: 'firstPost', content: "hello post1"},
         {id: 2, title: 'secondPost', content: "hello post2"}
     ],
