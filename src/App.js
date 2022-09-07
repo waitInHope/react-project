@@ -1,19 +1,14 @@
 import './App.css';
-import MyClock from "./components/clock";
-import List from './components/list';
-
-let items = [
-  {label: "apple", value: 1},
-  {label: "banana", value: 2},
-  {label: "orange", value: 3},
-  {label: "watermelon", value: 4}
-]
+// import MyClock from "./components/clock";
+// import List from './components/list';
+import HooksUseReducer from './components/hooks_useLayoutEffect';
 
 function App() {
   return (
     <div className="App">
-      <MyClock />
-      <List items={items}></List>
+      {/* <MyClock /> */}
+      {/* <List></List> */}
+      <HooksUseReducer></HooksUseReducer>
     </div>
   );
 }

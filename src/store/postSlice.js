@@ -22,7 +22,7 @@ const postSlice = createSlice({
     reducers: {
         // 接收对应action的函数，必须是纯函数
         addPost(state, action) {
-            state.posts.push(action.payload);
+            state.data.push(action.payload);
         }
     },
     extraReducers: {

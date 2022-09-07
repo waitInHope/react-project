@@ -1,0 +1,16 @@
+.tab {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.active {
+    color: red;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

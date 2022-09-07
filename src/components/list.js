@@ -13,7 +13,7 @@ function ListItem({ item }) {
   )
 }
 
-export default function List({items}) {
+function List() {
   const postArr = useSelector((state) => state.posts.data);
   console.log('从redux获取到的全局状态', postArr);
 
@@ -27,6 +27,13 @@ export default function List({items}) {
       })
     )
   }
+
+  let items = [
+    {label: "apple", value: 1},
+    {label: "banana", value: 2},
+    {label: "orange", value: 3},
+    {label: "watermelon", value: 4}
+  ]
 
   return (
     <div>
@@ -42,3 +49,5 @@ export default function List({items}) {
     </div>
   )
 }
+
+export default List;
