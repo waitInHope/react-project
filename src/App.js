@@ -1,7 +1,7 @@
 import './App.css';
 // import MyClock from "./components/clock";
 // import List from './components/list';
-import HooksUseReducer from './components/hooks_useLayoutEffect';
+import HooksUseReducer from './components/hooks_useImperativeHandle';
 
 function App() {
   return (
