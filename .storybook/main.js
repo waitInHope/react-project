@@ -28,6 +28,24 @@ module.exports = {
     },
   },
   webpackFinal: async (config) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              auto: true,
+              localIdentName: '[name]-[local]--[hash:base64:5]',
+              exportLocalsConvention: 'camelCaseOnly',
+              exportGlobals: true,
+            },
+          }
+        },
+        'sass-loader'
+      ],
+    });
     return { ...config, module: { ...config.module }, resolve: { ...config.resolve, ...custom.resolve } };
   },
 }
