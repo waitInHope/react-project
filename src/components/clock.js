@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from "react"
+import { Button } from 'antd';
+import 'antd/es/button/style/css'
 
 function NumberList(props) {
   const listItem = props.numbers.map((num) => {
@@ -62,8 +64,8 @@ function ExampleHook() {
   return (
     <div>
       <div>{count}</div>
-      <button onClick={() => {setCount(count + 1)}}>按钮</button>
-      <button onClick={() => {setCount(0)}}>重置次数</button>
+      <Button onClick={() => {setCount(count + 1)}}>按钮</Button>
+      <Button onClick={() => {setCount(0)}}>重置次数</Button>
     </div>
   )
 }
