@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react"
 import { Button } from 'antd';
 
+import MyTable from './my-table';
+
 function NumberList(props) {
   const listItem = props.numbers.map((num) => {
     return <li key={num}>{num}</li>
@@ -65,6 +67,8 @@ function ExampleHook() {
       <div>{count}</div>
       <Button type="primary" onClick={() => {setCount(count + 1)}}>按钮</Button>
       <Button onClick={() => {setCount(0)}}>重置次数</Button>
+
+      <MyTable />
     </div>
   )
 }
