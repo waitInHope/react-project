@@ -36,55 +36,99 @@ const MyTable = React.memo(() => {
 
   const [columns, setColumns] = useState([
     {
-      title: 'Date',
-      dataIndex: 'date',
-      width: 200,
-    },
-    {
-      title: 'Amount',
-      dataIndex: 'amount',
+      title: 'Full Name',
       width: 100,
-      sorter: (a, b) => a.amount - b.amount,
+      dataIndex: 'name',
+      key: 'name',
+      fixed: 'left',
     },
     {
-      title: 'Type',
-      dataIndex: 'type',
+      title: 'Age',
       width: 100,
+      dataIndex: 'age',
+      key: 'age',
+      fixed: 'left',
     },
     {
-      title: 'Note',
-      dataIndex: 'note',
-      width: 100,
+      title: 'Column 1',
+      dataIndex: 'address',
+      key: '1',
+      width: 120,
     },
     {
-      title: 'Action',
-      key: 'action',
-      render: () => <a>Delete</a>,
+      title: 'Column 2',
+      dataIndex: 'address',
+      key: '2',
+      width: 120,
+    },
+    {
+      title: 'Column 3',
+      dataIndex: 'address',
+      key: '3',
+      width: 120,
+    },
+    {
+      title: 'Column 4',
+      dataIndex: 'address',
+      key: '4',
+      width: 120,
+    },
+    {
+      title: 'Column 5',
+      dataIndex: 'address',
+      key: '5',
+      width: 120,
+    },
+    {
+      title: 'Column 6',
+      dataIndex: 'address',
+      key: '6',
+      width: 120,
+    },
+    {
+      title: 'Column 7',
+      dataIndex: 'address',
+      key: '7',
+      width: 120,
+    },
+    {
+      title: 'Column 8',
+      dataIndex: 'address',
+      key: '8',
+      width: 120,
+    },
+    {
+      title: 'Column 9',
+      dataIndex: 'apple',
+      key: '9',
+      width: 120
+    },
+    {
+      title: 'Column 10',
+      dataIndex: 'banana',
+      key: '10',
+      width: 120
     },
   ]);
   const data = [
     {
-      key: 0,
-      date: '2018-02-11',
-      amount: 120,
-      type: 'income',
-      note: 'transfer',
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York Park',
+      apple: 1,
+      banana: 1
     },
     {
-      key: 1,
-      date: '2018-03-11',
-      amount: 243,
-      type: 'income',
-      note: 'transfer',
-    },
-    {
-      key: 2,
-      date: '2018-04-11',
-      amount: 98,
-      type: 'income',
-      note: 'transfer',
+      key: '2',
+      name: 'Jim Green',
+      age: 40,
+      address: 'London Park',
+      apple: 1,
+      banana: 1
     },
   ];
+  
 
   // 动态修改宽度
   const handleResize =
@@ -110,13 +154,16 @@ const MyTable = React.memo(() => {
     <div>
       <Table
         bordered
-        columns={mergeColumns}
-        dataSource={data}
         components={{
           header: {
             cell: ResizableTitle,
           },
         }}
+        scroll={{
+          x: 1300,
+        }}
+        columns={mergeColumns}
+        dataSource={data}
       />
     </div>
   )
