@@ -153,6 +153,7 @@ const MyTable = React.memo(() => {
   return (
     <div>
       <Table
+        style={{ width: '800px' }}
         bordered
         components={{
           header: {

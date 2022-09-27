@@ -18,6 +18,19 @@ module.exports = {
   "core": {
     "builder": "@storybook/builder-webpack5"
   },
+  "babel": async (options) => ({
+    ...options,
+    plugins:[
+      [
+        "import",
+        {
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": true
+        }
+      ],
+    ]
+  }),
   typescript: {
     check: false,
     checkOptions: {},
@@ -44,6 +57,29 @@ module.exports = {
           }
         },
         'sass-loader'
+      ],
+    },
+    {
+      test: /\.less$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              auto: true,
+              localIdentName: '[name]-[local]--[hash:base64:5]',
+              exportLocalsConvention: 'camelCaseOnly',
+              exportGlobals: true,
+            },
+          }
+        },
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true
+          }
+        }
       ],
     });
     return { ...config, module: { ...config.module }, resolve: { ...config.resolve, ...custom.resolve } };
